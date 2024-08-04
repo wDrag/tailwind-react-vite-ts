@@ -1,0 +1,94 @@
+{
+  "env": { "browser": true, "es2020": true, "node": true },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["prettier", "import", "@typescript-eslint", "sort-export-all"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/jsx-no-target-blank": "warn",
+    "react/jsx-boolean-value": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "~/**",
+            "group": "sibling"
+          }
+        ],
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "warnOnUnassignedImports": true
+      }
+    ],
+    "import/consistent-type-specifier-style": ["error", "prefer-inline"],
+    "import/no-duplicates": ["error", { "prefer-inline": true }],
+    "import/newline-after-import": "error",
+    "import/extensions": ["error", "never", { "png": "always", "svg": "always" }],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          "@/apis/**",
+          "!@/assets/**",
+          "@/atoms/**",
+          "@/constants/**",
+          "@/hooks/**",
+          "!@/hooks/queries",
+          "!@/hooks/mutations",
+          "@/types/**",
+          "@/utils/**"
+        ]
+      }
+    ],
+    "no-unused-vars": "error",
+    "object-shorthand": ["error", "always"],
+    "no-implicit-coercion": "error",
+    "require-await": "error",
+    "sort-imports": ["error", { "ignoreDeclarationSort": true }],
+    "prefer-object-has-own": "error",
+    "no-duplicate-imports": "error",
+    "no-else-return": "error",
+    "no-useless-return": "error",
+    "no-console": ["error"],
+    "prefer-exponentiation-operator": "error",
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "export",
+        "next": "multiline-block-like"
+      }
+    ],
+    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-unnecessary-condition": "error",
+    "@typescript-eslint/await-thenable": "error",
+    "@typescript-eslint/no-unnecessary-type-assertion": "error",
+    "@typescript-eslint/no-inferrable-types": "error",
+    "sort-export-all/sort-export-all": "error"
+  }
+}
