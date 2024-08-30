@@ -1,0 +1,20 @@
+{
+    "eslint.validate": [
+      "javascript",
+      "svelte",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "biome.enabled": false,
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "always",
+        "source.fixAll": "always",
+        "source.sortImports": "always"
+      }
+    },
+  }
+  
