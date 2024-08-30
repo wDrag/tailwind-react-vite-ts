@@ -8,8 +8,8 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig(() => {
   return {
     build: {
-      sourcemap: true,
-      target: 'esnext',
+      sourcemap: false,
+      sourcemapExcludeSources: true,
     },
     plugins: [
       react(),
