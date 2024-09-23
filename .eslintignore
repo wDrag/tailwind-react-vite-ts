@@ -3,3 +3,5 @@
 vite.config.ts
 tailwind.config.ts
 postcss.config.js
+svgr.config.js
+svgr.d.ts
