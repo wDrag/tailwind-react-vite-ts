@@ -14,11 +14,7 @@ export const DATE_TIME_IN_UTC = "yyyy.MM.dd, HH:mm '(UTC)'";
 export const FULL_DATE_TIME = 'HH:mm:ss, dd/MM/yyyy';
 export const UTC_TIME_HUMANIZE = "HH:mm '(UTC)' LLLL dd yyyy";
 
-export async function sleep(time: number) {
-  return await new Promise((resolve) => {
-    setTimeout(resolve, time);
-  });
-}
+export const sleep = (time: number) => new Promise<void>((resolve) => setTimeout(resolve, time));
 
 export const formatTime = (time: DateTime | undefined, format = DATE_TIME_IN_UTC) => {
   return time?.toFormat(format) ?? 'N/A';
